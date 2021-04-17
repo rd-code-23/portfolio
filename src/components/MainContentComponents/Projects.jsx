@@ -21,7 +21,7 @@ const Projects = () => {
     }, [])
     //console.log(projects);
     return (
-        <div>
+        <div id="projects">
 
 
 <Heading title={'Projects'} icon={<AppsIcon />}/>

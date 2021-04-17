@@ -13,7 +13,7 @@ const Project = ({ name, description, linkRepo, linkLiveProject }) => {
             minWidth: '400px',
             maxWidth: '700px',
             padding: '10px',
-            marginLeft: '20px',
+            // marginLeft: '20px',
             borderRadius: '10px',
             backgroundColor: '#1f2021'
         },

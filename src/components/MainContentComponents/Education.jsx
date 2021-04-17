@@ -13,7 +13,7 @@ const Education = () => {
             minWidth: '400px',
             maxWidth: '400px',
             padding: '10px',
-            marginLeft: '20px',
+            // marginLeft: '20px',
             borderRadius: '10px',
             backgroundColor: '#1f2021',
         },
@@ -33,7 +33,7 @@ const Education = () => {
     const onMouseOver = () => setIsHover(true);
     const onMouseOut = () => setIsHover(false);
     return (
-        <>
+        <div id="education">
             <Heading title={'Education'} icon={< SchoolIcon />} />
 
             <div
@@ -58,7 +58,7 @@ const Education = () => {
 
                 </Card >
             </div>
-        </>
+        </div>
 
     )
 }

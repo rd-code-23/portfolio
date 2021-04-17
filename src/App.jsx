@@ -33,21 +33,22 @@ function App() {
     <>
 
       <ThemeProvider theme={theme}>
+
         <Paper >
-          <Grid container  className={classes.appContainer} wrap="nowrap">
-      
+          <Grid container className={classes.appContainer} wrap="nowrap">
+
             <Grid container item xs={3} direction="column" alignItems="center"   >
-              <Grid container item  justify="center" alignItems="center"  className={classes.appContainer}>
-                <Paper style={{position:'fixed'}}>
-                <Sidebar />
-                </Paper>
-            
+              <Grid container item justify="center" alignItems="flex-start" className={classes.appContainer}>
+                <div style={{ position: 'fixed' }}>
+                  <Sidebar />
+                </div>
+
                 {/* <Paper  >
                  
                 </Paper> */}
               </Grid>
             </Grid>
-            
+
             <Grid item xs={9} >
               <Paper style={{}}>
                 <MainContent />
@@ -57,6 +58,7 @@ function App() {
           </Grid>
 
         </Paper>
+
         {/* <Paper className={classes.appContainer} square>
           <Grid container className={classes.container} wrap="nowrap">
             <Grid container item direction="column" wrap="nowrap">
@@ -77,6 +79,7 @@ function App() {
           </Grid>
         </Paper> */}
       </ThemeProvider>
+
     </>
   );
 }

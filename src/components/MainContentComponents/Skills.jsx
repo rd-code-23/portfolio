@@ -8,10 +8,10 @@ import Heading from './Heading';
 import Skill from './Skill';
 const Skills = () => {
     return (
-        <div>
+        <div id="skills">
             <Heading title={'Skills'} icon={< MemoryIcon />} />
             <div style={{ padding: '25px' }}>
-                <Grid container spacing={2}  xs={12} xl={8}>
+                <Grid container spacing={2}  xs={12} xl={10}>
                     <Grid item>
                         <Skill logo={"https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png"}
                             alt={'Javascript'}
