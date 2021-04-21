@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Card, CardMedia, CardContent, Typography, IconButton } from '@material-ui/core/';
+import { Grid, Card, CardMedia, CardContent, Typography } from '@material-ui/core/';
 import SchoolIcon from '@material-ui/icons/School';
-import Tooltip from '@material-ui/core/Tooltip';
 import Heading from './Heading';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
@@ -12,10 +11,8 @@ const Education = () => {
 
     const useStyles = makeStyles({
         root: {
-            // minWidth: '400px',
             maxWidth: '400px',
             padding: '10px',
-            // marginLeft: '20px',
             borderRadius: '10px',
             backgroundColor: '#1f2021',
         },
@@ -28,7 +25,6 @@ const Education = () => {
         },
         media: {
             height: 140,
-          
         },
     });
 
@@ -42,25 +38,24 @@ const Education = () => {
             <div
                 onClick={(e) => { e.stopPropagation(); if (isHover) window.open('https://www.sfu.ca/computing/prospective-students/undergraduate-students/programs/degree-programs/softwaresystems.html', '_blank') }}
                 style={{ padding: '25px' }}>
-                    <Grid container item  justify={`${mobile ? ('center') : ('')}`}>
-                <Card className={`${classes.root} ${classes.onHover}`}  elevation={1}
-                    onMouseOver={onMouseOver}
-                    onMouseOut={onMouseOut} >
-                    <CardMedia
-                        className={classes.media}
-                        image="https://skywindowsltd.com/wp-content/uploads/2020/06/sky_img_blog_12.jpg"
-                        title="Contemplative Reptile"
-                    />
-                    <CardContent >
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Major: Software Systems
+                <Grid container item justify={`${mobile ? ('center') : ('')}`}>
+                    <Card className={`${classes.root} ${classes.onHover}`} elevation={1}
+                        onMouseOver={onMouseOver}
+                        onMouseOut={onMouseOut} >
+                        <CardMedia
+                            className={classes.media}
+                            image="https://skywindowsltd.com/wp-content/uploads/2020/06/sky_img_blog_12.jpg"
+                            title="Contemplative Reptile"
+                        />
+                        <CardContent >
+                            <Typography gutterBottom variant="h5" component="h2">
+                                Major: Software Systems
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            2016-2020
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                2016-2020
                         </Typography>
-                    </CardContent>
-
-                </Card >
+                        </CardContent>
+                    </Card >
                 </Grid>
             </div>
         </div>

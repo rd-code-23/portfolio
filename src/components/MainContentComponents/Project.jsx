@@ -10,18 +10,16 @@ import clsx from 'clsx';
 
 const Project = ({ name, description, linkRepo, linkLiveProject }) => {
     const [isHover, setIsHover] = useState(false);
- const mobile = useMediaQuery('(max-width:1279px)');
+    const mobile = useMediaQuery('(max-width:1279px)');
+
     const useStyles = makeStyles({
         root: {
             padding: '10px',
-            width:  `${mobile ? '20vw' : '40vw'}`,
+            width: `${mobile ? '20vw' : '40vw'}`,
             minWidth: '180px',
             maxWidth: '550px',
             borderRadius: '10px',
             backgroundColor: '#1f2021'
-        },
-        media: {
-            height: 140,
         },
         onHover: {
             border: `${isHover ? '1px #6c757d solid' : ''}`,
@@ -36,7 +34,7 @@ const Project = ({ name, description, linkRepo, linkLiveProject }) => {
     });
 
     const classes = useStyles();
-   
+
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
@@ -61,7 +59,6 @@ const Project = ({ name, description, linkRepo, linkLiveProject }) => {
                         <Grid container item justify={`${mobile ? ('center') : ('flex-end')}`} alignItems="center" >
                             <Grid item>
                                 <div onClick={(e) => { e.stopPropagation(); window.open(`${linkRepo}`, '_blank') }} >
-
                                     <Tooltip title="See Code">
                                         <IconButton aria-label="delete" className={classes.iconButton} style={{ padding: '5px', marginRight: '4px' }}>
                                             <GitHubIcon />
@@ -72,7 +69,7 @@ const Project = ({ name, description, linkRepo, linkLiveProject }) => {
 
                             <Grid item>
                                 <Tooltip title="Open App">
-                                <div onClick={(e) => { e.stopPropagation(); window.open(`${linkLiveProject}`, '_blank') }} >
+                                    <div onClick={(e) => { e.stopPropagation(); window.open(`${linkLiveProject}`, '_blank') }} >
                                         <IconButton aria-label="delete" style={{ padding: '10px' }}>
                                             <PlayArrowIcon />
                                         </IconButton>
@@ -80,42 +77,43 @@ const Project = ({ name, description, linkRepo, linkLiveProject }) => {
                                 </Tooltip>
                             </Grid>
 
-                            {mobile ? (
-                                <Grid item >
-                                    <IconButton
-                                        className={clsx(classes.expand, {
-                                            [classes.expandOpen]: expanded,
-                                        })}
-                                        onClick={handleExpandClick}
-                                        aria-expanded={expanded}
-                                        aria-label="show more">
-                                        <ExpandMoreIcon />
-                                    </IconButton>
-
-                                  
-                                </Grid>) : ('')}
-
-
+                            {mobile ?
+                                (
+                                    <Grid item >
+                                        <IconButton
+                                            className={clsx(classes.expand, {
+                                                [classes.expandOpen]: expanded,
+                                            })}
+                                            onClick={handleExpandClick}
+                                            aria-expanded={expanded}
+                                            aria-label="show more">
+                                            <ExpandMoreIcon />
+                                        </IconButton>
+                                    </Grid>
+                                ) :
+                                ('')
+                            }
                         </Grid>
                     </Grid>
 
-                    {mobile ? 
-                    (
-                        <>
-                          <Collapse in={expanded} timeout="auto" unmountOnExit>
-                                        <CardContent>
-                                            <Typography gutterBottom variant="body1" style={{ padding: '5px', fontSize:'12px' }}>
-                                                {description}
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis optio cumque molestiae soluta odio corrupti explicabo, dicta quo esse sapiente quibusdam eveniet dolores tempora quas, minima eaque. Porro, sit accusantium!
-                       </Typography>
-                                        </CardContent>
-                                    </Collapse>
-                        </>) : 
-                        (<Typography gutterBottom variant="body1" style={{ padding: '5px' }}>
-                            {description}
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis optio cumque molestiae soluta odio corrupti explicabo, dicta quo esse sapiente quibusdam eveniet dolores tempora quas, minima eaque. Porro, sit accusantium!
-                        </Typography>)}
-
+                    {mobile ?
+                        (
+                            <>
+                                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                                    <CardContent>
+                                        <Typography gutterBottom variant="body1" style={{ padding: '5px', fontSize: '12px' }}>
+                                            {description}
+                                        </Typography>
+                                    </CardContent>
+                                </Collapse>
+                            </>
+                        ) :
+                        (
+                            <Typography gutterBottom variant="body1" style={{ padding: '5px' }}>
+                                {description}
+                            </Typography>
+                        )
+                    }
 
                 </CardContent>
             </Card >

@@ -20,42 +20,26 @@ function App() {
   const useStyles = makeStyles({
     appContainer: {
       minHeight: '100vh',
-      // minWidth: '100vw'
-    },
-
-    container: {
-      // minWidth: '80vw',
-      // minHeight: '100vh',
-      maxWidth: '100vw'
     }
-  })
+  });
+
   const classes = useStyles();
   const mobile = useMediaQuery('(max-width:1279px)');
+
   return (
-    <>
-
-      <ThemeProvider theme={theme}>
-
-        <Paper className={classes.appContainer} square>
-
-        {/* style={{minWidth:'100vw'}} */}
-
-
-          {mobile ? (
-
-         <>
-        
-                <TopBar />
-             
+    <ThemeProvider theme={theme}>
+      <Paper className={classes.appContainer} square>
+        {mobile ?
+          (
+            <>
+              <TopBar />
               <MainContent />
-
-</>
-
-         
-          ) : (
+            </>
+          ) :
+          (
             <>
               <Grid container display="column" >
-                <Grid container item xs={false} lg={3} direction="column" alignItems="center"   >
+                <Grid container item lg={3} direction="column" alignItems="center"   >
                   <Grid container item justify="center" alignItems="flex-start" className={classes.appContainer}>
                     <div style={{ position: 'fixed' }}>
                       <Sidebar />
@@ -63,44 +47,17 @@ function App() {
                   </Grid>
                 </Grid>
 
-                <Grid container item xs={false} lg={9} >
-                  <Paper style={{}}>
+                <Grid container item lg={9} >
+                  <Paper>
                     <MainContent />
                   </Paper>
                 </Grid>
               </Grid>
             </>
-
-          )}
-          {/* <Grid container item xs={false} lg={9}>
-                <MainContent />
-
-            </Grid> */}
-        </Paper>
-
-
-        {/* <Paper className={classes.appContainer} square>
-          <Grid container className={classes.container} wrap="nowrap">
-            <Grid container item direction="column" wrap="nowrap">
-              <Grid item xs={3} >
-                <Paper style={{ position: 'fixed', minWidth: '25vw', maxWidth: '30vw' }}>
-                  <Sidebar />
-                </Paper>
-
-              </Grid>
-              <Grid item xs={9} >
-                <Paper style={{}}>
-                  <MainContent />
-                </Paper>
-              </Grid>
-
-
-            </Grid>
-          </Grid>
-        </Paper> */}
-      </ThemeProvider>
-
-    </>
+          )
+        }
+      </Paper>
+    </ThemeProvider>
   );
 }
 
