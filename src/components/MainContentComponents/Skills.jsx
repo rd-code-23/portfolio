@@ -6,51 +6,72 @@ import MemoryIcon from '@material-ui/icons/Memory';
 import Tooltip from '@material-ui/core/Tooltip';
 import Heading from './Heading';
 import Skill from './Skill';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+
+import css_logo from './../../images/skills/css.png'
+import git_logo from './../../images/skills/git.png'
+import html_logo from './../../images/skills/html.png'
+import js_logo from './../../images/skills/javascript.png'
+import mui_logo from './../../images/skills/mui.png'
+import react_logo from './../../images/skills/react.png'
+import vscode_logo from './../../images/skills/vscode.png'
+
 const Skills = () => {
+    const mobile = useMediaQuery('(max-width:1279px)');
+    const WIDTH = mobile ? (45) : (95);
+
+   
     return (
         <div id="skills">
             <Heading title={'Skills'} icon={< MemoryIcon />} />
             <div style={{ padding: '25px' }}>
-                <Grid container spacing={2}  xs={12} xl={10}>
+                <Grid container item spacing={1} lg={11}  justify={`${mobile ? ('center') : ('')}`}   >
                     <Grid item>
-                        <Skill logo={"https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png"}
+                        <Skill logo={js_logo}
                             alt={'Javascript'}
-                            link={"https://en.wikipedia.org/wiki/JavaScript"} />
+                            link={"https://en.wikipedia.org/wiki/JavaScript"}
+                            width={ WIDTH + 45} />
                     </Grid>
                     <Grid item>
-                        <Skill logo={"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png"}
+                        <Skill logo={react_logo}
                             alt={'React'}
-                            link={"https://en.wikipedia.org/wiki/React_(JavaScript_library)"} />
+                            link={"https://en.wikipedia.org/wiki/React_(JavaScript_library)"} 
+                            width={ WIDTH}/>
                     </Grid>
                     <Grid item>
                         <Skill
-                            logo={"https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png"}
+                            logo={html_logo}
                             alt={'HTML'}
-                            link={"https://en.wikipedia.org/wiki/HTML"} />
+                            link={"https://en.wikipedia.org/wiki/HTML"} 
+                            width={ WIDTH}/>
                     </Grid>
                     <Grid item>
                         <Skill
-                            logo={"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/CSS.3.svg/1200px-CSS.3.svg.png"}
+                            logo={css_logo}
                             alt={'CSS'}
-                            link={"https://en.wikipedia.org/wiki/CSS"} />
+                            link={"https://en.wikipedia.org/wiki/CSS"} 
+                            width={ WIDTH - `${mobile ? (13) : (22)}`  }/>
                     </Grid>
                     <Grid item>
                         <Skill
-                            logo={"https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"}
+                            logo={git_logo}
                             alt={'Git'}
-                            link={"https://en.wikipedia.org/wiki/Git"} />
+                            link={"https://en.wikipedia.org/wiki/Git"} 
+                            width={ WIDTH}/>
                     </Grid>
                     <Grid item>
                         <Skill
-                            logo={"https://material-ui.com/static/logo.png"}
+                            logo={mui_logo}
                             alt={'Material UI'}
-                            link={"https://material-ui.com/"} />
+                            link={"https://material-ui.com/"} 
+                            width={ WIDTH}/>
                     </Grid>
                     <Grid item>
                         <Skill
-                            logo={"https://user-images.githubusercontent.com/674621/71187801-14e60a80-2280-11ea-94c9-e56576f76baf.png"}
+                            logo={vscode_logo}
                             alt={'VS Code'}
-                            link={"https://en.wikipedia.org/wiki/Visual_Studio_Code"} />
+                            link={"https://en.wikipedia.org/wiki/Visual_Studio_Code"} 
+                            width={ WIDTH - 8}/>
                     </Grid>
                 </Grid>
             </div>

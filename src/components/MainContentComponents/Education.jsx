@@ -4,13 +4,15 @@ import { Grid, Card, CardMedia, CardContent, Typography, IconButton } from '@mat
 import SchoolIcon from '@material-ui/icons/School';
 import Tooltip from '@material-ui/core/Tooltip';
 import Heading from './Heading';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const Education = () => {
     const [isHover, setIsHover] = useState(false);
+    const mobile = useMediaQuery('(max-width:1279px)');
 
     const useStyles = makeStyles({
         root: {
-            minWidth: '400px',
+            // minWidth: '400px',
             maxWidth: '400px',
             padding: '10px',
             // marginLeft: '20px',
@@ -26,6 +28,7 @@ const Education = () => {
         },
         media: {
             height: 140,
+          
         },
     });
 
@@ -39,7 +42,8 @@ const Education = () => {
             <div
                 onClick={(e) => { e.stopPropagation(); if (isHover) window.open('https://www.sfu.ca/computing/prospective-students/undergraduate-students/programs/degree-programs/softwaresystems.html', '_blank') }}
                 style={{ padding: '25px' }}>
-                <Card className={`${classes.root} ${classes.onHover}`} elevation={1}
+                    <Grid container item  justify={`${mobile ? ('center') : ('')}`}>
+                <Card className={`${classes.root} ${classes.onHover}`}  elevation={1}
                     onMouseOver={onMouseOver}
                     onMouseOut={onMouseOut} >
                     <CardMedia
@@ -57,6 +61,7 @@ const Education = () => {
                     </CardContent>
 
                 </Card >
+                </Grid>
             </div>
         </div>
 

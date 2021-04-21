@@ -7,9 +7,10 @@ import Heading from './MainContentComponents/Heading';
 const MainContent = () => {
     return (
         <div style={{ padding: '50px' }}>
+        
             <Projects />
-            <Skills />
-            <Education />
+           <Skills />
+             <Education />
         </div>
     )
 }

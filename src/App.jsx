@@ -3,7 +3,8 @@ import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/sty
 import { Grid, Paper } from '@material-ui/core';
 import MainContent from './components/MainContent';
 import Sidebar from './components/Sidebar';
-
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import TopBar from './components/TopBar'
 
 const theme = createMuiTheme({
   palette: {
@@ -25,39 +26,58 @@ function App() {
     container: {
       // minWidth: '80vw',
       // minHeight: '100vh',
-      // maxWidth: '100vw'
+      maxWidth: '100vw'
     }
   })
   const classes = useStyles();
+  const mobile = useMediaQuery('(max-width:1279px)');
   return (
     <>
 
       <ThemeProvider theme={theme}>
 
-        <Paper >
-          <Grid container className={classes.appContainer} wrap="nowrap">
+        <Paper className={classes.appContainer} square>
 
-            <Grid container item xs={3} direction="column" alignItems="center"   >
-              <Grid container item justify="center" alignItems="flex-start" className={classes.appContainer}>
-                <div style={{ position: 'fixed' }}>
-                  <Sidebar />
-                </div>
+        {/* style={{minWidth:'100vw'}} */}
 
-                {/* <Paper  >
-                 
-                </Paper> */}
+
+          {mobile ? (
+
+         <>
+        
+                <TopBar />
+             
+              <MainContent />
+
+</>
+
+         
+          ) : (
+            <>
+              <Grid container display="column" >
+                <Grid container item xs={false} lg={3} direction="column" alignItems="center"   >
+                  <Grid container item justify="center" alignItems="flex-start" className={classes.appContainer}>
+                    <div style={{ position: 'fixed' }}>
+                      <Sidebar />
+                    </div>
+                  </Grid>
+                </Grid>
+
+                <Grid container item xs={false} lg={9} >
+                  <Paper style={{}}>
+                    <MainContent />
+                  </Paper>
+                </Grid>
               </Grid>
-            </Grid>
+            </>
 
-            <Grid item xs={9} >
-              <Paper style={{}}>
+          )}
+          {/* <Grid container item xs={false} lg={9}>
                 <MainContent />
-              </Paper>
-            </Grid>
 
-          </Grid>
-
+            </Grid> */}
         </Paper>
+
 
         {/* <Paper className={classes.appContainer} square>
           <Grid container className={classes.container} wrap="nowrap">

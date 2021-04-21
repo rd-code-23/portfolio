@@ -1,6 +1,8 @@
 import React from 'react'
 import { Grid, Card, CardActions, CardContent, Typography, IconButton } from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+
 const useStyles = makeStyles({
     iconStyle: {
         "& > svg": {
@@ -12,10 +14,13 @@ const useStyles = makeStyles({
 });
 const Heading = ({ title, icon }) => {
     const classes = useStyles();
+    const mobile = useMediaQuery('(max-width:1279px)');
+
 
     return (
         <div>
-            <Grid container alignItems="center">
+         
+            <Grid container item alignItems="center"    justify={`${mobile ? ('center') : ('flex-start')}`}>
                 <Grid item>
                     <div className={classes.iconStyle}>{icon}</div>
                 </Grid>
