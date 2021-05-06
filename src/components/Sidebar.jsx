@@ -2,7 +2,6 @@ import React from 'react';
 import headshot from './../images/profile_pic.jpg';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Paper, Typography } from '@material-ui/core';
-import { HashLink as Link } from 'react-router-hash-link';
 import Contact from './Contact.jsx';
 import Nav from './Nav.jsx';
 
