@@ -1,5 +1,5 @@
 import React from 'react';
-import headshot from './../images/headshot.png';
+import headshot from './../images/profile_pic.jpg';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Typography } from '@material-ui/core';
 import Nav from './Nav.jsx'
@@ -17,6 +17,11 @@ const TopBar = () => {
         },
         linkIcon: {
             width: '16px'
+        },
+        profilePic: {
+            width: '70px', 
+            height: '60px',
+            borderRadius:'5px'
         }
     });
 
@@ -27,7 +32,7 @@ const TopBar = () => {
 
             <Grid container item justify="center" style={{ paddingTop: '15px' }} wrap="nowrap">
                 <Grid container item justify="flex-end" style={{ paddingRight: 15 }}>
-                    <img src={headshot} alt="headshot" style={{ width: '50px', height: '50px' }} />
+                    <img src={headshot} alt="headshot" className={classes.profilePic} />
                 </Grid>
 
                 <Grid container item display="column"  >

@@ -1,5 +1,5 @@
 import React from 'react';
-import headshot from './../images/headshot.png';
+import headshot from './../images/profile_pic.jpg';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Paper, Typography } from '@material-ui/core';
 import { HashLink as Link } from 'react-router-hash-link';
@@ -17,6 +17,10 @@ const useStyles = makeStyles({
     },
     linkIcon: {
         width: '16px'
+    },
+    profilePic: {
+        width: '112px',
+        borderRadius:'15px'
     }
 });
 
@@ -26,7 +30,7 @@ const Sidebar = () => {
         <Paper className={classes.paper}>
             <Grid container direction="column" style={{ padding: '0px' }}>
                 <Grid item justify="center">
-                    <img src={headshot} alt="headshot" style={{ width: '112px' }} />
+                    <img src={headshot} alt="headshot" className={classes.profilePic} />
                 </Grid>
                 <Grid item>
                     <Typography variant="h6" style={{ marginTop: '10px', fontFamily: 'Source Sans Pro, sans-serif', whiteSpace: 'pre-line' }}>
