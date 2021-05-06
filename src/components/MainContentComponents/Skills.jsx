@@ -12,6 +12,7 @@ import js_logo from './../../images/skills/javascript.png'
 import mui_logo from './../../images/skills/mui.png'
 import react_logo from './../../images/skills/react.png'
 import vscode_logo from './../../images/skills/vscode.png'
+import jest_logo from './../../images/skills/jest.png'
 
 const Skills = () => {
     const mobile = useMediaQuery('(max-width:1279px)');
@@ -68,6 +69,13 @@ const Skills = () => {
                             alt={'VS Code'}
                             link={"https://en.wikipedia.org/wiki/Visual_Studio_Code"}
                             width={WIDTH - 8} />
+                    </Grid>
+                    <Grid item>
+                        <Skill
+                            logo={jest_logo}
+                            alt={'Jest'}
+                            link={"https://en.wikipedia.org/wiki/Jest_(JavaScript_framework)"}
+                            width={WIDTH } />
                     </Grid>
                 </Grid>
             </div>

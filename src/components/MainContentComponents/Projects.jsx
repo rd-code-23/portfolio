@@ -1,27 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Grid } from '@material-ui/core';
 import Project from './Project.jsx';
-import axios from 'axios';
 import AppsIcon from '@material-ui/icons/Apps';
 import Heading from './Heading';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const Projects = () => {
-    const PROJECT_NAMES = ['todo-list', 'crypto_tracker'];
-    const [projects, setProjects] = useState([]);
     const mobile = useMediaQuery('(max-width:1279px)');
-
-    useEffect(() => {
-        const fetchApi = async () => {
-            try {
-                const res = await axios.get('https://api.github.com/users/rd-code-23/repos');
-                setProjects(res.data)
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        fetchApi();
-    }, [])
 
     return (
         <div id="projects">
@@ -29,20 +14,40 @@ const Projects = () => {
             <Heading title={'Projects'} icon={<AppsIcon />} />
 
             <Grid container spacing={2} style={{ padding: '25px' }} justify={`${mobile ? ('center') : ('flex-start')}`} >
-                {projects.map(project => {
-                    if (PROJECT_NAMES.includes(project.name)) {
-                        return (
-                            <Grid item key={project.id}>
-                                <Project
-                                    name={project.name}
-                                    description={project.description}
-                                    linkRepo={project.html_url}
-                                    linkLiveProject={`https://rd-code-23.github.io/${project.name}/`}
-                                />
-                            </Grid>
-                        )
-                    }
-                })}
+                <Grid item >
+                    <Project
+                        name={'Crypto Tracker'}
+                        description={`A responsive crypto currency tracker to view the current markets.
+                         Built using React, Material UI, React Router and ChartJS. Can add and remove tracking coins as well as change currencies. 
+                         Each coin can be clicked on for more details and viewing a history chart. 
+                         Future plans include, backend with NodeJS and testing infrastructure with Jest.`}
+                        linkRepo={'https://github.com/rd-code-23/crypto_tracker'}
+                        linkLiveProject={`https://serene-varahamihira-fd198b.netlify.app/`}
+                    />
+                </Grid>
+                <Grid item >
+                    <Project
+                        name={'Todo List'}
+                        description={`A responsive todo list to add, delete, edit, complete and filter todos. 
+                        Built using React and MaterialUI. Also, this project included testing infrastructure using Jest. 
+                        Currently working on backend using NodeJS to save todos.`}
+                        linkRepo={'https://github.com/rd-code-23/todo-list'}
+                        linkLiveProject={`https://rd-code-23.github.io/todo-list/`}
+                    />
+                </Grid>
+                <Grid item >
+                    <Project
+                        name={'Paint'}
+                        description={`BetaPaint is desktop application built with Java for creating graphics of the user’s choosing by
+                        utilizing features such as drawing tools, a text tool, a paint bucket/fill tool,
+                        shapes, lines, and erasers. Users can create their own image or edit existing
+                        images that they import to the application. 
+                        BetaPaint is a project created by a team of students in Simon Fraser University's
+                        CMPT 106 class during the fall 2017 semester.`}
+                        linkRepo={'https://github.com/rd-code-23/PaintApp'}
+                        linkLiveProject={`https://github.com/rd-code-23/PaintApp#-how-to-run-paint-application-`}
+                    />
+                </Grid>
             </Grid>
 
         </div>
