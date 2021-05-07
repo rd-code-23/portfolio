@@ -31,7 +31,7 @@ const Contact = () => {
             <div style={{ marginTop: '0px', padding: '0' }} className={classes.link}>
                 <Grid container item alignItems="center" wrap="nowrap">
                     <AlternateEmailIcon style={{ marginRight: '5px' }} className={classes.linkIcon} />
-                    rddeveloper23@gmail.com
+                    rishidholliwar@gmail.com
                 </Grid>
             </div>
         </div>
