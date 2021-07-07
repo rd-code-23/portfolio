@@ -22,17 +22,17 @@ const Projects = () => {
                          Each coin can be clicked on for more details and viewing a history chart. 
                          Future plans include, backend with NodeJS and testing infrastructure with Jest.`}
                         linkRepo={'https://github.com/rd-code-23/crypto_tracker'}
-                        linkLiveProject={`https://serene-varahamihira-fd198b.netlify.app/`}
+                        linkLiveProject={`https://rd-crypto-tracker.netlify.app/`}
                     />
                 </Grid>
                 <Grid item >
                     <Project
                         name={'Todo List'}
-                        description={`A responsive todo list to add, delete, edit, complete and filter todos. 
-                        Built using React and MaterialUI. Also, this project included testing infrastructure using Jest. 
-                        Currently working on backend using NodeJS to save todos.`}
-                        linkRepo={'https://github.com/rd-code-23/todo-list'}
-                        linkLiveProject={`https://rd-code-23.github.io/todo-list/`}
+                        description={`A responsive, full-stack (MERN) todo list app where you can add, delete, edit, complete and filter todos.
+                        Users can sign up to save their todos using a custom or google login. 
+                         This project also includes testing using Mocha.`}
+                        linkRepo={'https://github.com/rd-code-23/todo-list-fullstack'}
+                        linkLiveProject={`https://rd-todo-list.netlify.app/`}
                     />
                 </Grid>
                 <Grid item >
