@@ -5,28 +5,34 @@ import { Grid, Paper, Typography } from '@material-ui/core';
 import Contact from './Contact.jsx';
 import Nav from './Nav.jsx';
 import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
-import MyLocation  from '@material-ui/icons/MyLocation';
-
-const useStyles = makeStyles({
-    paper: {
-        marginTop: '50%'
-    },
-    link: {
-        textDecoration: 'none',
-        color: 'white',
-        fontSize: '18px'
-    },
-    linkIcon: {
-        width: '16px'
-    },
-    profilePic: {
-        width: '112px',
-        borderRadius: '15px'
-    }
-});
+import MyLocation from '@material-ui/icons/MyLocation';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const Sidebar = () => {
+    const isMobile = useMediaQuery('(max-width:1279px)');
+
+    const useStyles = makeStyles({
+        paper: {
+            marginTop: '50%',
+            backgroundColor: isMobile ? '#373a47' : '',
+            boxShadow: "none"
+        },
+        link: {
+            textDecoration: 'none',
+            color: 'white',
+            fontSize: '18px'
+        },
+        linkIcon: {
+            width: '16px'
+        },
+        profilePic: {
+            width: '112px',
+            borderRadius: '15px'
+        }
+    });
+
     const classes = useStyles();
+
     return (
         <Paper className={classes.paper}>
             <Grid container direction="column" style={{ padding: '0px' }}>
