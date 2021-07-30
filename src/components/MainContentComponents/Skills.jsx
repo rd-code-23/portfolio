@@ -13,6 +13,9 @@ import mui_logo from './../../images/skills/mui.png'
 import react_logo from './../../images/skills/react.png'
 import vscode_logo from './../../images/skills/vscode.png'
 import jest_logo from './../../images/skills/jest.png'
+import docker_logo from './../../images/skills/docker.png'
+import node_logo from './../../images/skills/node.png'
+import sql_logo from './../../images/skills/sql.png'
 
 const Skills = () => {
     const mobile = useMediaQuery('(max-width:1279px)');
@@ -27,7 +30,7 @@ const Skills = () => {
                         <Skill logo={js_logo}
                             alt={'Javascript'}
                             link={"https://en.wikipedia.org/wiki/JavaScript"}
-                            width={WIDTH + 45} />
+                            width={WIDTH - 5} />
                     </Grid>
                     <Grid item>
                         <Skill logo={react_logo}
@@ -47,7 +50,7 @@ const Skills = () => {
                             logo={css_logo}
                             alt={'CSS'}
                             link={"https://en.wikipedia.org/wiki/CSS"}
-                            width={WIDTH - `${mobile ? (13) : (22)}`} />
+                            width={WIDTH} />
                     </Grid>
                     <Grid item>
                         <Skill
@@ -61,21 +64,42 @@ const Skills = () => {
                             logo={mui_logo}
                             alt={'Material UI'}
                             link={"https://material-ui.com/"}
-                            width={WIDTH} />
+                            width={WIDTH + 10} />
                     </Grid>
                     <Grid item>
                         <Skill
                             logo={vscode_logo}
                             alt={'VS Code'}
                             link={"https://en.wikipedia.org/wiki/Visual_Studio_Code"}
-                            width={WIDTH - 8} />
+                            width={WIDTH - 10} />
                     </Grid>
                     <Grid item>
                         <Skill
                             logo={jest_logo}
                             alt={'Jest'}
                             link={"https://en.wikipedia.org/wiki/Jest_(JavaScript_framework)"}
-                            width={WIDTH } />
+                            width={WIDTH - 5} />
+                    </Grid>
+                    <Grid item>
+                        <Skill
+                            logo={docker_logo}
+                            alt={'Docker'}
+                            link={"https://en.wikipedia.org/wiki/Docker_(software)"}
+                            width={WIDTH} />
+                    </Grid>
+                    <Grid item>
+                        <Skill
+                            logo={node_logo}
+                            alt={'Node'}
+                            link={"https://en.wikipedia.org/wiki/Node.js"}
+                            width={WIDTH - 10} />
+                    </Grid>
+                    <Grid item>
+                        <Skill
+                            logo={sql_logo}
+                            alt={'SQL'}
+                            link={"https://en.wikipedia.org/wiki/MySQL"}
+                            width={WIDTH + 40} />
                     </Grid>
                 </Grid>
             </div>
