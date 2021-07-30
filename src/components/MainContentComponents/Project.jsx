@@ -35,7 +35,7 @@ const Project = ({ name, description, linkRepo, linkLiveProject }) => {
 
     const classes = useStyles();
 
-    const [expanded, setExpanded] = React.useState(false);
+    const [expanded, setExpanded] = useState(false);
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
@@ -44,7 +44,7 @@ const Project = ({ name, description, linkRepo, linkLiveProject }) => {
     const onMouseOut = () => setIsHover(false);
 
     return (
-        <div onClick={(e) => { e.stopPropagation(); if (isHover && !mobile) window.open(`${linkLiveProject}`, '_blank') }}  >
+        <div onClick={(e) => { e.stopPropagation(); if (isHover && !mobile) window.open(`${linkLiveProject !== '' ? linkLiveProject : linkRepo}`, '_blank') }}  >
             <Card className={`${classes.root} ${classes.onHover}`} elevation={1}
                 onMouseOver={onMouseOver}
                 onMouseOut={onMouseOut} >
@@ -68,13 +68,15 @@ const Project = ({ name, description, linkRepo, linkLiveProject }) => {
                             </Grid>
 
                             <Grid item>
-                                <Tooltip title="Open App">
-                                    <div onClick={(e) => { e.stopPropagation(); window.open(`${linkLiveProject}`, '_blank') }} >
-                                        <IconButton aria-label="delete" style={{ padding: '10px' }}>
-                                            <PlayArrowIcon />
-                                        </IconButton>
-                                    </div>
-                                </Tooltip>
+                                {linkLiveProject !== '' &&
+                                    <Tooltip title="Open App">
+                                        <div onClick={(e) => { e.stopPropagation(); window.open(`${linkLiveProject}`, '_blank') }} >
+                                            <IconButton aria-label="delete" style={{ padding: '10px' }}>
+                                                <PlayArrowIcon />
+                                            </IconButton>
+                                        </div>
+                                    </Tooltip>
+                                }
                             </Grid>
 
                             {mobile ?

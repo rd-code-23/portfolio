@@ -30,9 +30,18 @@ const Projects = () => {
                         name={'Todo List'}
                         description={`A responsive, full-stack (MERN) todo list app where you can add, delete, edit, complete and filter todos.
                         Users can sign up to save their todos using a custom or google login. 
-                         This project also includes testing using Mocha.`}
+                         This project also includes testing using Mocha and Docker for containerization.`}
                         linkRepo={'https://github.com/rd-code-23/todo-list-fullstack'}
                         linkLiveProject={`https://rd-todo-list.netlify.app/`}
+                    />
+                </Grid>
+                <Grid item >
+                    <Project
+                        name={'Open Source Projects'}
+                        description={`I have contributed to various open source projects on Github. Click here to see the projects I have
+                        contributed to.`}
+                        linkRepo={'https://github.com/rd-code-23?tab=repositories&q=&type=fork&language=&sort='}
+                        linkLiveProject={``}
                     />
                 </Grid>
                 <Grid item >
