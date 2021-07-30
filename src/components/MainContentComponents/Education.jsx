@@ -38,7 +38,7 @@ const Education = () => {
             <div
                 onClick={(e) => { e.stopPropagation(); if (isHover) window.open('https://www.sfu.ca/computing/prospective-students/undergraduate-students/programs/degree-programs/softwaresystems.html', '_blank') }}
                 style={{ padding: '25px' }}>
-                <Grid container item justify={`${mobile ? ('center') : ('')}`}>
+                <Grid container item justify={`${mobile ? ('center') : ('flex-start')}`}>
                     <Card className={`${classes.root} ${classes.onHover}`} elevation={1}
                         onMouseOver={onMouseOver}
                         onMouseOut={onMouseOut} >

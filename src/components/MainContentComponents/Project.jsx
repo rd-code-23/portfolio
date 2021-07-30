@@ -50,7 +50,7 @@ const Project = ({ name, description, linkRepo, linkLiveProject }) => {
                 onMouseOut={onMouseOut} >
                 <CardContent >
                     <Grid container justify="space-between" wrap={`${mobile ? ('wrap') : ('nowrap')}`}  >
-                        <Grid container item justify={`${mobile ? ('center') : ('')}`}>
+                        <Grid container item justify={`${mobile ? ('center') : ('flex-start')}`}>
                             <Typography gutterBottom variant="h6" component="h2">
                                 {name}
                             </Typography>

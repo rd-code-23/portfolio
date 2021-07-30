@@ -36,7 +36,7 @@ const Sidebar = () => {
     return (
         <Paper className={classes.paper}>
             <Grid container direction="column" style={{ padding: '0px' }}>
-                <Grid item justify="center">
+                <Grid item >
                     <img src={headshot} alt="headshot" className={classes.profilePic} />
                 </Grid>
                 <Grid item>
@@ -47,10 +47,10 @@ const Sidebar = () => {
                 </Grid>
 
                 <Grid container item direction="row" wrap="nowrap">
-                    <Grid item style={{ marginRight: '25px', width: '5px' }} justify="center">
+                    <Grid item style={{ marginRight: '25px', width: '5px' }} >
                         <WorkOutlineIcon />
                     </Grid>
-                    <Grid item justify="center">
+                    <Grid item >
                         <Typography variant="h6" style={{ fontSize: '14px', marginTop: '0px', fontFamily: 'Source Sans Pro, sans-serif', whiteSpace: 'pre-line' }}>
                             Junior software developer
                         </Typography>
@@ -58,10 +58,10 @@ const Sidebar = () => {
                 </Grid>
 
                 <Grid container item direction="row" wrap="nowrap">
-                    <Grid item style={{ marginRight: '25px', width: '5px' }} justify="center">
+                    <Grid item style={{ marginRight: '25px', width: '5px' }}>
                         <MyLocation />
                     </Grid>
-                    <Grid item justify="center">
+                    <Grid item >
                         <Typography variant="h6" style={{ fontSize: '14px', marginTop: '0px', fontFamily: 'Source Sans Pro, sans-serif', whiteSpace: 'pre-line' }}>
                             Vancouver, Canada
                         </Typography>

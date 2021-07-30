@@ -25,7 +25,7 @@ const Skills = () => {
         <div id="skills">
             <Heading title={'Skills'} icon={< MemoryIcon />} />
             <div style={{ padding: '25px' }}>
-                <Grid container item spacing={1} lg={11} justify={`${mobile ? ('center') : ('')}`}   >
+                <Grid container item spacing={1} lg={11} justify={`${mobile ? ('center') : ('flex-start')}`}   >
                     <Grid item>
                         <Skill logo={js_logo}
                             alt={'Javascript'}
