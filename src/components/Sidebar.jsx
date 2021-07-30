@@ -5,8 +5,7 @@ import { Grid, Paper, Typography } from '@material-ui/core';
 import Contact from './Contact.jsx';
 import Nav from './Nav.jsx';
 import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-import { MyLocation } from '@material-ui/icons';
+import MyLocation  from '@material-ui/icons/MyLocation';
 
 const useStyles = makeStyles({
     paper: {
