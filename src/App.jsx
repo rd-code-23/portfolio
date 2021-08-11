@@ -1,22 +1,14 @@
 import './App.css';
-import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import { Grid, Paper } from '@material-ui/core';
 import MainContent from './components/MainContent';
 import Sidebar from './components/Sidebar';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { slide as Menu } from "react-burger-menu";
-
-const theme = createMuiTheme({
-  palette: {
-    type: 'dark',
-    background: {
-      paper: "#000000"
-    }
-  },
-})
+import { theme } from './theme';
+import { MOBILE_SIZE } from './constants';
 
 function App() {
-
   const useStyles = makeStyles({
     appContainer: {
       minHeight: '100vh',
@@ -24,16 +16,14 @@ function App() {
   });
 
   const classes = useStyles();
-  const isMobile = useMediaQuery('(max-width:1279px)');
+  const isMobile = useMediaQuery(MOBILE_SIZE);
 
   return (
     <ThemeProvider theme={theme}>
       <Paper className={classes.appContainer} square>
-
         <Grid container display="column" >
-
           {isMobile ? (
-            <Menu isOpen={!isMobile} width={"15rem"} styles={styles}>
+            <Menu isOpen={!isMobile} width={"15rem"} styles={burgerStyles}>
               <Sidebar />
             </Menu>
           ) : (
@@ -47,18 +37,17 @@ function App() {
           )}
 
           <Grid container item lg={9} >
-            <Paper>
+            <Paper elevation={0}>
               <MainContent />
             </Paper>
           </Grid>
         </Grid>
-
       </Paper>
     </ThemeProvider>
   );
 }
 
-var styles = {
+var burgerStyles = {
   bmBurgerButton: {
     position: 'fixed',
     width: '36px',
@@ -86,11 +75,9 @@ var styles = {
   },
   bmMenu: {
     background: '#373a47',
-    padding: '2.5em 1.5em 0',
-    fontSize: '1.15em'
   },
   bmMorphShape: {
-    fill: '#373a47'
+    fill: '#bdc3c7'
   },
   bmItemList: {
     color: '#b8b7ad',
@@ -104,8 +91,5 @@ var styles = {
     background: 'rgba(0, 0, 0, 0.3)'
   }
 }
-
-
-
 
 export default App;

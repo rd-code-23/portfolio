@@ -7,15 +7,17 @@ import Nav from './Nav.jsx';
 import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
 import MyLocation from '@material-ui/icons/MyLocation';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { MOBILE_SIZE } from '../constants';
 
 const Sidebar = () => {
-    const isMobile = useMediaQuery('(max-width:1279px)');
+    const isMobile = useMediaQuery(MOBILE_SIZE);
 
-    const useStyles = makeStyles({
+    const useStyles = makeStyles(theme => ({
         paper: {
             marginTop: '50%',
             backgroundColor: isMobile ? '#373a47' : '',
-            boxShadow: "none"
+            boxShadow: "none",
+            color: theme.palette.primary.contrastText
         },
         link: {
             textDecoration: 'none',
@@ -29,7 +31,7 @@ const Sidebar = () => {
             width: '112px',
             borderRadius: '15px'
         }
-    });
+    }));
 
     const classes = useStyles();
 

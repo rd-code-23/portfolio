@@ -7,31 +7,30 @@ import Tooltip from '@material-ui/core/Tooltip';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import clsx from 'clsx';
+import { MOBILE_SIZE } from '../../constants';
 
 const Project = ({ name, description, linkRepo, linkLiveProject }) => {
     const [isHover, setIsHover] = useState(false);
-    const mobile = useMediaQuery('(max-width:1279px)');
+    const mobile = useMediaQuery(MOBILE_SIZE);
 
-    const useStyles = makeStyles({
+    const useStyles = makeStyles(theme => ({
         root: {
             padding: '10px',
-            width: `${mobile ? '20vw' : '40vw'}`,
+            width: `${mobile ? '60vw' : '40vw'}`,
             minWidth: '180px',
             maxWidth: '550px',
             borderRadius: '10px',
-            backgroundColor: '#1f2021'
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.primary.contrastText
         },
         onHover: {
             border: `${isHover ? '1px #6c757d solid' : ''}`,
             cursor: `${isHover ? 'pointer' : ''}`
         },
         iconButton: {
-            "& .MuiTouchRipple-root span": {
-                backgroundColor: 'red!important',
-                opacity: .3,
-            },
+            color: theme.palette.primary.contrastText
         }
-    });
+    }));
 
     const classes = useStyles();
 
@@ -51,9 +50,10 @@ const Project = ({ name, description, linkRepo, linkLiveProject }) => {
                 <CardContent >
                     <Grid container justify="space-between" wrap={`${mobile ? ('wrap') : ('nowrap')}`}  >
                         <Grid container item justify={`${mobile ? ('center') : ('flex-start')}`}>
-                            <Typography gutterBottom variant="h6" component="h2">
+                            <Typography gutterBottom variant="h5" component="h2" style={{ textAlign: 'center' }}>
                                 {name}
                             </Typography>
+
                         </Grid>
 
                         <Grid container item justify={`${mobile ? ('center') : ('flex-end')}`} alignItems="center" >
@@ -71,7 +71,7 @@ const Project = ({ name, description, linkRepo, linkLiveProject }) => {
                                 {linkLiveProject !== '' &&
                                     <Tooltip title="Open App">
                                         <div onClick={(e) => { e.stopPropagation(); window.open(`${linkLiveProject}`, '_blank') }} >
-                                            <IconButton aria-label="delete" style={{ padding: '10px' }}>
+                                            <IconButton aria-label="delete" className={classes.iconButton} style={{ padding: '10px' }}>
                                                 <PlayArrowIcon />
                                             </IconButton>
                                         </div>
@@ -103,7 +103,7 @@ const Project = ({ name, description, linkRepo, linkLiveProject }) => {
                             <>
                                 <Collapse in={expanded} timeout="auto" unmountOnExit>
                                     <CardContent>
-                                        <Typography gutterBottom variant="body1" style={{ padding: '5px', fontSize: '12px' }}>
+                                        <Typography gutterBottom variant="body1" style={{ fontSize: '14px' }}>
                                             {description}
                                         </Typography>
                                     </CardContent>
@@ -116,7 +116,6 @@ const Project = ({ name, description, linkRepo, linkLiveProject }) => {
                             </Typography>
                         )
                     }
-
                 </CardContent>
             </Card >
         </div>

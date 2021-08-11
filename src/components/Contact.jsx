@@ -4,19 +4,20 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles } from '@material-ui/core/styles';
+import { MOBILE_SIZE } from '../constants';
 
 const Contact = () => {
-    const mobile = useMediaQuery('(max-width:1279px)');
-    const useStyles = makeStyles({
+    const mobile = useMediaQuery(MOBILE_SIZE);
+    const useStyles = makeStyles(theme => ({
         link: {
             textDecoration: 'none',
-            color: 'white',
+            color: theme.palette.primary.contrastText,
             fontSize: `${mobile ? '12px' : '16px'}`
         },
         linkIcon: {
-            width: `${mobile ? '20px' : '11px'}`
+            width: `${mobile ? '20px' : '16px'}`
         }
-    });
+    }));
 
     const classes = useStyles();
 
