@@ -2,18 +2,19 @@ import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Card, CardContent } from '@material-ui/core/';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { MOBILE_SIZE } from '../../constants';
 
 const Skill = ({ logo, alt, link, width }) => {
-    const mobile = useMediaQuery('(max-width:1279px)');
+    const mobile = useMediaQuery(MOBILE_SIZE);
     const [isHover, setIsHover] = useState(false);
 
-    const useStyles = makeStyles({
+    const useStyles = makeStyles(theme => ({
         root: {
             padding: `${mobile ? '10px' : '50px'}`,
             width: '80px',
             height: '80px',
             borderRadius: '10px',
-            backgroundColor: '#1f2021'
+            backgroundColor: theme.palette.primary.main
         },
         img: {
             width: width,
@@ -23,7 +24,7 @@ const Skill = ({ logo, alt, link, width }) => {
             border: `${isHover ? '1px #6c757d solid' : ''}`,
             cursor: `${isHover ? 'pointer' : ''}`
         },
-    });
+    }));
     const classes = useStyles();
 
     const onMouseOver = () => setIsHover(true);
@@ -42,7 +43,6 @@ const Skill = ({ logo, alt, link, width }) => {
                         </Grid>
                     </Grid>
                 </CardContent>
-
             </Card >
         </div>
     )

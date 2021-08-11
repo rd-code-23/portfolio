@@ -4,6 +4,7 @@ import MemoryIcon from '@material-ui/icons/Memory';
 import Heading from './Heading';
 import Skill from './Skill';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { MOBILE_SIZE } from '../../constants';
 
 import css_logo from './../../images/skills/css.png'
 import git_logo from './../../images/skills/git.png'
@@ -18,7 +19,7 @@ import node_logo from './../../images/skills/node.png'
 import sql_logo from './../../images/skills/sql.png'
 
 const Skills = () => {
-    const mobile = useMediaQuery('(max-width:1279px)');
+    const mobile = useMediaQuery(MOBILE_SIZE);
     const WIDTH = mobile ? (45) : (95);
 
     return (

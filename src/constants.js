@@ -1,0 +1,1 @@
+export const MOBILE_SIZE = '(max-width:1279px)';

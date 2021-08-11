@@ -4,21 +4,22 @@ import { Grid } from '@material-ui/core';
 import { HashLink as Link } from 'react-router-hash-link';
 import SubdirectoryArrowRightIcon from '@material-ui/icons/SubdirectoryArrowRight';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { MOBILE_SIZE } from '../constants';
 
 const Nav = () => {
-    const mobile = useMediaQuery('(max-width:1279px)');
+    const mobile = useMediaQuery(MOBILE_SIZE);
 
-    const useStyles = makeStyles({
+    const useStyles = makeStyles(theme => ({
         link: {
             textDecoration: 'none',
-            color: 'white',
             fontSize: `${mobile ? '20px' : '16px'}`,
-            padding: '0px'
+            padding: '0px',
+            color: theme.palette.primary.contrastText
         },
         linkIcon: {
             width: '16px'
         }
-    });
+    }));
     const classes = useStyles();
 
     return (

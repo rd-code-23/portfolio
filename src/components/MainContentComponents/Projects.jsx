@@ -4,13 +4,13 @@ import Project from './Project.jsx';
 import AppsIcon from '@material-ui/icons/Apps';
 import Heading from './Heading';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { MOBILE_SIZE } from '../../constants';
 
 const Projects = () => {
-    const mobile = useMediaQuery('(max-width:1279px)');
+    const mobile = useMediaQuery(MOBILE_SIZE);
 
     return (
         <div id="projects">
-
             <Heading title={'Projects'} icon={<AppsIcon />} />
 
             <Grid container spacing={2} style={{ padding: '25px' }} justify={`${mobile ? ('center') : ('flex-start')}`} >
@@ -58,7 +58,6 @@ const Projects = () => {
                     />
                 </Grid>
             </Grid>
-
         </div>
     )
 }

@@ -4,17 +4,18 @@ import { Grid, Card, CardMedia, CardContent, Typography } from '@material-ui/cor
 import SchoolIcon from '@material-ui/icons/School';
 import Heading from './Heading';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { MOBILE_SIZE } from '../../constants';
 
 const Education = () => {
     const [isHover, setIsHover] = useState(false);
-    const mobile = useMediaQuery('(max-width:1279px)');
+    const mobile = useMediaQuery(MOBILE_SIZE);
 
-    const useStyles = makeStyles({
+    const useStyles = makeStyles(theme => ({
         root: {
             maxWidth: '400px',
             padding: '10px',
             borderRadius: '10px',
-            backgroundColor: '#1f2021',
+            backgroundColor: theme.palette.primary.main,
         },
         img: {
             height: '120px'
@@ -26,7 +27,7 @@ const Education = () => {
         media: {
             height: 140,
         },
-    });
+    }));
 
     const classes = useStyles();
     const onMouseOver = () => setIsHover(true);
@@ -50,16 +51,15 @@ const Education = () => {
                         <CardContent >
                             <Typography gutterBottom variant="h5" component="h2">
                                 Major: Software Systems
-                        </Typography>
+                            </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
                                 2016-2020
-                        </Typography>
+                            </Typography>
                         </CardContent>
                     </Card >
                 </Grid>
             </div>
         </div>
-
     )
 }
 
