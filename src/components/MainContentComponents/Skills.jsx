@@ -41,6 +41,13 @@ const Skills = () => {
                     </Grid>
                     <Grid item>
                         <Skill
+                            logo={node_logo}
+                            alt={'Node'}
+                            link={"https://en.wikipedia.org/wiki/Node.js"}
+                            width={WIDTH - 10} />
+                    </Grid>
+                    <Grid item>
+                        <Skill
                             logo={html_logo}
                             alt={'HTML'}
                             link={"https://en.wikipedia.org/wiki/HTML"}
@@ -88,13 +95,7 @@ const Skills = () => {
                             link={"https://en.wikipedia.org/wiki/Docker_(software)"}
                             width={WIDTH} />
                     </Grid>
-                    <Grid item>
-                        <Skill
-                            logo={node_logo}
-                            alt={'Node'}
-                            link={"https://en.wikipedia.org/wiki/Node.js"}
-                            width={WIDTH - 10} />
-                    </Grid>
+
                     <Grid item>
                         <Skill
                             logo={sql_logo}

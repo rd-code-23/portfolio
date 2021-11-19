@@ -32,6 +32,10 @@ const Nav = () => {
                 <SubdirectoryArrowRightIcon className={classes.linkIcon} />
                 <Link to="/#skills" className={classes.link}>Skills</Link>
             </Grid>
+            <Grid container item alignItems="center" wrap="nowrap" >
+                <SubdirectoryArrowRightIcon className={classes.linkIcon} />
+                <Link to="/#work" className={classes.link}>Work Experience</Link>
+            </Grid>
             <Grid container item alignItems="center">
                 <SubdirectoryArrowRightIcon className={classes.linkIcon} />
                 <Link to="/#education" className={classes.link}>Education</Link>
